@@ -63,7 +63,7 @@ int print_octal(va_list list)
 	len = base_len(num, 8);
 
 	oct_n = malloc(sizeof(char) * len + 1);
-	if (octal_rep == NULL)
+	if (oct_n == NULL)
 		return (-1);
 	for (len = 0; num > 0; len++)
 	{
@@ -91,7 +91,7 @@ int print_hex(va_list list)
 {
 	unsigned int num;
 	int len;
-	int rem_num;
+	int remn;
 	char *hex_n;
 	char *rev_hex;
 
@@ -118,7 +118,7 @@ int print_hex(va_list list)
 		num = num / 16;
 	}
 	hex_n[len] = '\0';
-	rev_hex = rev_string(hex_rep);
+	rev_hex = rev_string(hex_n);
 	if (rev_hex == NULL)
 		return (-1);
 	put_base(rev_hex);
