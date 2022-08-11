@@ -35,6 +35,24 @@ int print_octal(va_list list);
 int print_hex(va_list list);
 int print_heX(va_list list);
 
+
+/* Handlers */
+unsigned char handle_flags(const char *flags, char *index);
+unsigned char handle_length(const char *modifier, char *index);
+int handle_width(va_list args, const char *modifier, char *index);
+int handle_precision(va_list args, const char *modifier, char *index);
+unsigned int (*handle_specifiers(const char *specifier))(va_list, buffer_t *,
+		unsigned char, int, int, unsigned char);
+
+/* Modifiers */
+unsigned int print_width(buffer_t *output, unsigned int printed,
+		unsigned char flags, int wid);
+unsigned int print_string_width(buffer_t *output,
+		unsigned char flags, int wid, int prec, int size);
+unsigned int print_neg_width(buffer_t *output, unsigned int printed,
+		unsigned char flags, int wid);
+
+
 /*Aux functions*/
 unsigned int base_len(unsigned int, int);
 char *rev_string(char *);
