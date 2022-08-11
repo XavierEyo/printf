@@ -7,7 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int printed_chars;
+	int output_chars;
 	mod_sf f_list[] = {
 		{"c", print_char},
 		{"s", print_string},
