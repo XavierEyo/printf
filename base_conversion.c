@@ -14,12 +14,12 @@ int print_binary(va_list list)
 	char *str;
 	char *rev_str;
 
-	num = va_arg(list, unsigned int); /** integer pointed to by list is assigned to the variable num */
+	num = va_arg(list, unsigned int);
 	if (num == 0)
 		return (_pchar('0'));
 	if (num < 1)
 		return (-1);
-	len = base_len(num, 2); /** store the value of the function base_len in the variable len */
+	len = base_len(num, 2);
 	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
 		return (-1);
