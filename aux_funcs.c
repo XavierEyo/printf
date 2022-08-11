@@ -32,7 +32,7 @@ char *rev_string(char *s)
 }
 
 /**
- * write_base - sends characters to be written on standard output
+ * put_base - sends characters to be written on standard output
  * @str: String to interprete
  */
 void put_base(char *str)
