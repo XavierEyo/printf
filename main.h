@@ -16,10 +16,10 @@ struct mod
 	char *sign;
 	int (*f)(va_list);
 };
-typedef struct mod switch_sf;
+typedef struct mod mod_sf;
 
 /*Main */
-int syntax_i(const char *format, conver_t f_list[], va_list arg_list);
+int syntax_i(const char *format, mod_sf f_list[], va_list arg_list);
 int _printf(const char *format, ...);
 int _pchar(char);
 int print_char(va_list);
