@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * syntax_i - Receives the main string and all the necessary parameters to
@@ -18,9 +18,9 @@ int syntax_i(const char *format, mod_sf f_list[], va_list arg_list)
 		if (format[i] == '%')
 		{
 			/*Iterates through struct to find the right func*/
-			for (j = 0; f_list[j].signs != NULL; j++)
+			for (j = 0; f_list[j].sign != NULL; j++)
 			{
-				if (format[i + 1] == f_list[j].signs[0])
+				if (format[i + 1] == f_list[j].sign[0])
 				{
 					r_val = f_list[j].f(arg_list);
 					if (r_val == -1)
@@ -29,7 +29,7 @@ int syntax_i(const char *format, mod_sf f_list[], va_list arg_list)
 					break;
 				}
 			}
-			if (f_list[j].signs == NULL && format[i + 1] != ' ')
+			if (f_list[j].sign == NULL && format[i + 1] != ' ')
 			{
 				if (format[i + 1] != '\0')
 				{
